@@ -1,0 +1,24 @@
+Default: &defaults
+  user: myapp
+  password: myapp
+  host: localhost
+  port: 5432
+  database: myapp
+  poolsize: 10
+
+Development:
+  <<: *defaults
+
+Testing:
+  database: myapp_test
+  <<: *defaults
+
+Staging:
+  database: myapp_staging
+  poolsize: 100
+  <<: *defaults
+
+Production:
+  database: myapp_production
+  poolsize: 100
+  <<: *defaults
